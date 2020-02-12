@@ -26,12 +26,12 @@ sudo apt autoremove -y
 
 ```
 
-3. **Install sshpass**
+3. **Install sshpass.**
 ```bash
 sudo apt install sshpass
 
 ```
-4. **Change current user to your home assistant user name**
+4. **Change current user to your home assistant user name.**
   - "default is homeassistant" if default copy and paste 
   ```bash  
   sudo -u homeassistant -H -s
@@ -39,18 +39,20 @@ sudo apt install sshpass
   ssh pi@127.0.0.1 'export DISPLAY=:0 && xset dpms force on'
   
   ```  
-5. **It will ask if you want to permanently add it**  
+5. **It will ask if you want to permanently add it.**  
  - Type yes.
  - enter **"your password"** for PI
 
-6. below command lines should now work for you in your Home assistant switch configuration page
+6. **below command lines should now work for you in your Home assistant switch configuration page.**
    </div>   
-
+```
 >  - platform: command_line
     switches:
       touch_screen:
         command_on:  sshpass -p YOUR_PASSWORD ssh pi@127.0.0.1 'export DISPLAY=:0 && xset dpms force on'
         command_off:  sshpass -p YOUR_PASSWORD ssh pi@127.0.0.1 'export DISPLAY=:0 && xset dpms force off'
         command_state:  sshpass -p YOUR_PASSWORD ssh pi@127.0.0.1 'export DISPLAY=:0 && xset -q | grep "Monitor is" | cut -c14-17' | grep "On" > /dev/null
+        
+```        
   
       
