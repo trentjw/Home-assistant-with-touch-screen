@@ -46,7 +46,7 @@ sudo apt install sshpass
 6. **below command lines should now work for you in your Home assistant switch configuration page.**
    </div>   
 ```
->  - platform: command_line
+  - platform: command_line
     switches:
       touch_screen:
         command_on:  sshpass -p YOUR_PASSWORD ssh pi@127.0.0.1 'export DISPLAY=:0 && xset dpms force on'
