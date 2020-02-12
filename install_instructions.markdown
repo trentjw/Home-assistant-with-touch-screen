@@ -143,10 +143,10 @@ mkdir LXDE-pi
 
 sudo nano ~/.config/lxsession/LXDE-pi/autostart
 
-```bash
+```
 "COPY ALL BELOW THIS LINE DOWN TO NOT INCLUDING END."
 
-```
+```bash
 
 lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
