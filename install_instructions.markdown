@@ -4,7 +4,7 @@ Description: "Instructions to install Home Assistant with local touch screen sup
 redirect_from: /getting-started/installation-raspberry-pi/
 ---
 Install [Raspberry Raspbian](https://www.raspberrypi.org/downloads/) with desktop either for the raspberry pi or desktop PC depending on your hardware.
-Initial setup of raspberry Debian is easier with monitor keyboard and mouse hooked up local to your device.
+Initial setup of raspberry Raspbain is easier with monitor, keyboard and mouse hooked up local to your device.
 Enable SSH in configuration, once you have enabled SSH then remote configuring is preferred for below instructions. 
 You can copy and paste below commands into the terminal, these instructions assume you have knowledge on the ability to SSH into your device.
 Copy and paste is the easiest, and [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) allows right click paste.
@@ -12,7 +12,7 @@ These steps use the default install instructions of home assistant and the defau
 
 (Note some stuff will not work fully until all the steps have been done IE shared folders won't connect until that directory is made.)  
 
-This instruction will do the following:
+### This instruction will do the following:
 
 1. Will allow network shares of certain folders for editing and **backing up** your configuration of Home assistant files and access to root directory.
  **((WARNING MESSING AROUND IN ROOT DIR CAN BREAK YOUR INSTALL))**
@@ -38,7 +38,7 @@ sudo apt autoremove -y
 
 ```
 
-"STEPS BELOW ALLOWS SHARING OF FOLDERS OVER YOUR LOCAL NETWORK."
+### "STEPS BELOW ALLOWS SHARING OF FOLDERS OVER YOUR LOCAL NETWORK."
 
 ```bash
 
@@ -127,7 +127,7 @@ sudo smbpasswd -a pi
 sudo service smbd restart
 
 ```
-"STEPS BELOW MAKES THE RASPBERRY PI BOOT INTO KIOSK SKIP TO NEXT IF NOT USING."
+### "STEPS BELOW MAKES THE RASPBERRY PI BOOT INTO KIOSK SKIP TO NEXT IF NOT USING."
 ```bash
 sudo apt install sshpass
 
@@ -168,7 +168,7 @@ cd
 sudo apt-get install bluetooth bluez blueman
 
 ```
-"STEPS BELOW MAKES HOME ASSISTANT START ON REBOOT."
+### "STEPS BELOW MAKES HOME ASSISTANT START ON REBOOT."
 ```bash
 sudo nano -w /etc/systemd/system/home-assistant@homeassistant.service
 
@@ -202,7 +202,7 @@ sudo systemctl enable home-assistant@homeassistant
 sudo apt install xdotool unclutter sed
 
 ```
-"STEPS BELOW INSTALLS HOME ASSISTANT."
+### "STEPS BELOW INSTALLS HOME ASSISTANT."
 ```bash
 sudo apt install python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev -y
 
@@ -239,7 +239,11 @@ hass
 
 ```
 </div>
-"GIVE IT ABOUT 10 MINS AND REBOOT THE SYSTEM, IF YOU HAVE A MONITOR CONNECTED TO THE RASPBERRY IT SHOULD DISPLAY THE HOME ASSISTANT PAGE."
+
+
+**"GIVE IT ABOUT 10 MINS AND REBOOT THE SYSTEM,"**
+
+**"IF YOU HAVE A MONITOR CONNECTED TO THE RASPBERRY IT SHOULD DISPLAY THE HOME ASSISTANT PAGE."**
 
 ### Upgrade
 
