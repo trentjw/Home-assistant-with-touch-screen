@@ -34,6 +34,10 @@ sudo apt update
 
 sudo apt upgrade -y
 
+```
+
+```bash
+
 sudo apt autoremove -y
 
 ```
