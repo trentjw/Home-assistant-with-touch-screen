@@ -29,7 +29,7 @@ This instruction will do the following:
 </div>
 
 
-```
+```bash
 sudo apt update
 
 sudo apt upgrade -y
@@ -45,7 +45,7 @@ sudo apt autoremove -y
 sudo apt install samba -y
 
 ```
-```
+```bash
 
 sudo nano /etc/samba/smb.conf
 
@@ -54,7 +54,7 @@ sudo nano /etc/samba/smb.conf
 
 "COPY ALL BELOW THIS LINE DOWN TO NOT INCLUDING END."
 
-```
+```bash
 
 [global]
 netbios name = HomeAssistant
@@ -118,21 +118,21 @@ hosts allow =
 
 "PRESS CRTL+O (write out), ENTER, CTRL+X (exit)."
 
-```
+```bash
 sudo smbpasswd -a pi
 
 ```
 "ENTER THE PASSWORD IT WILL ASK TWICE."
-```
+```bash
 sudo service smbd restart
 
 ```
 "STEPS BELOW MAKES THE RASPBERRY PI BOOT INTO KIOSK SKIP TO NEXT IF NOT USING."
-```
+```bash
 sudo apt install sshpass
 
 ```
-```
+```bash
 cd .config
 
 mkdir lxsession
@@ -143,7 +143,7 @@ mkdir LXDE-pi
 
 sudo nano ~/.config/lxsession/LXDE-pi/autostart
 
-```
+```bash
 "COPY ALL BELOW THIS LINE DOWN TO NOT INCLUDING END."
 
 ```
@@ -162,19 +162,19 @@ lxpanel --profile LXDE-pi
 "END"
 
 "PRESS CRTL+O (write out), ENTER, CTRL+X (exit)."
-```
+```bash
 cd
 
 sudo apt-get install bluetooth bluez blueman
 
 ```
 "STEPS BELOW MAKES HOME ASSISTANT START ON REBOOT."
-```
+```bash
 sudo nano -w /etc/systemd/system/home-assistant@homeassistant.service
 
 ```
 "COPY ALL BELOW THIS LINE DOWN TO NOT INCLUDING END."
-```
+```bash
 [Unit]
 Description=Home Assistant
 After=network-online.target
@@ -192,32 +192,32 @@ WantedBy=multi-user.target
 "END"
 
 "PRESS CRTL+O (write out), ENTER, CTRL+X (exit)."
-```
+```bash
 sudo systemctl --system daemon-reload
 
 sudo systemctl enable home-assistant@homeassistant
 
 ```
-```
+```bash
 sudo apt install xdotool unclutter sed
 
 ```
 "STEPS BELOW INSTALLS HOME ASSISTANT."
-```
+```bash
 sudo apt install python3 python3-dev python3-venv python3-pip libffi-dev libssl-dev -y
 
 ```
-```
+```bash
 sudo apt install libbluetooth-dev
 
 ```
-```
+```bash
 sudo apt install python-dev
 
 sudo pip install PyBluez
 
 ```
-```
+```bash
 sudo useradd -rm homeassistant -G dialout,gpio,i2c
 
 cd /srv
