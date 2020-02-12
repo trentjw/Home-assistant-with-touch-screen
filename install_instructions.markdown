@@ -1,6 +1,6 @@
 ---
-title: "Manual installation on a Raspberry Pi"
-description: "Instructions to install Home Assistant on a Raspberry Pi running Raspbian Lite."
+Title: "Manual installation on a Raspberry Pi"
+Description: "Instructions to install Home Assistant with touch screen support on a Raspberry Pi running Raspbian."
 redirect_from: /getting-started/installation-raspberry-pi/
 ---
 Install [Raspberry Raspbian](https://www.raspberrypi.org/downloads/) with desktop either for the raspberry pi or desktop PC depending on your hardware.
