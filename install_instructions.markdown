@@ -1,6 +1,6 @@
 ---
 Title: "Manual installation on a Raspberry Pi"
-Description: "Instructions to install Home Assistant with touch screen support on a Raspberry Pi running Raspbian."
+Description: "Instructions to install Home Assistant with local touch screen support on a Raspberry Pi running Raspbian."
 redirect_from: /getting-started/installation-raspberry-pi/
 ---
 Install [Raspberry Raspbian](https://www.raspberrypi.org/downloads/) with desktop either for the raspberry pi or desktop PC depending on your hardware.
@@ -14,7 +14,7 @@ These steps use the default install instructions of home assistant and the defau
 
 This instruction will do the following:
 
-1. Will allow network shares of certain folders for editing and [u]**backing up**[/u] your configuration of Home assistant files and access to root directory.
+1. Will allow network shares of certain folders for editing and **backing up** your configuration of Home assistant files and access to root directory.
  **((WARNING MESSING AROUND IN ROOT DIR CAN BREAK YOUR INSTALL))**
 
 2. Will allow Home assistant to restart after a reboot.
@@ -147,14 +147,14 @@ sudo nano ~/.config/lxsession/LXDE-pi/autostart
 "COPY ALL BELOW THIS LINE DOWN TO NOT INCLUDING END."
 
 ```bash
-
+#this configuration allows the Screen to be turned on via home assistant switch 
 lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
 #@xscreensaver -no-splash
 @point-rpi
-@xset s off
-@xset -dpms
-@xset s noblank
+#@xset s off
+#@xset -dpms
+#@xset s noblank
 @sed -i 's/"exited_cleanly": false/"exited_cleanly": true/' ~/.config/chromium-browser/Default/Preferences
 @chromium-browser --noerrdialogs --disable-infobars --kiosk http://localhost:8123
 ```
@@ -240,3 +240,16 @@ hass
 ```
 </div>
 "GIVE IT ABOUT 10 MINS AND REBOOT THE SYSTEM, IF YOU HAVE A MONITOR CONNECTED TO THE RASPBERRY IT SHOULD DISPLAY THE HOME ASSISTANT PAGE."
+
+### Upgrade
+
+ 1. Stop Home Assistant
+
+ 2. Open the directory where the virtual environment is located, activate the virtual environment, then upgrade Home Assistant:
+    ```bash
+    cd homeassistant
+    source bin/activate
+    python3 -m pip install --upgrade homeassistant
+    ```
+ 3. Start Home Assistant
+ 4. You can now reach the web interface on `http://ipaddress:8123/` - the first start may take some time before the web interface is available, depending on how many integrations need to be upgraded.
